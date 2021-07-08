@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500&display=swap');
+
+$launch-screen-color: #1a1a1a;
+$button-color: rgb(255, 60, 60);
+$wishes-bg: #EDEEF7;
+$main-text-color: #412119;
+$main-text-color-translucent: #311913da;
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+:root{
+    font-size: 20px;
+}
+body{
+    .launch-screen{
+        height: 100vh;
+        width: 100vw;
+        background-color: $launch-screen-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 999;
+        button{
+            padding: 1.5rem 3.5rem;
+            font-size: 1.3rem;
+            font-family: 'Ubuntu', sans-serif;
+            background-color: $button-color;
+            border: none;
+            border-radius: 1rem;
+        }
+        button:hover{
+            cursor: pointer;
+        }
+    }
+    .main-screen{
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        background-color: $wishes-bg;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 69;
+        opacity: 0;
+        .wishes{
+            width: 80vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 80vh;
+            svg{
+                height: 75%;
+                .candle{
+                    display: block;
+                }
+                .cake{
+                    display: block;
+                }
+            }
+            h1{
+                font-family: 'Ubuntu', sans-serif;
+                color: $main-text-color;
+                font-size: 2.5rem;
+            }
+        }
+        .buttons{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            width: 80vw;
+            justify-items: center;
+            div{
+                button{
+                    padding: .75rem 2rem;
+                    font-size: .75rem;
+                    font-family: 'Ubuntu', sans-serif;
+                    background-color: #ef81a0;
+                    border: 3px $main-text-color-translucent solid;
+                    border-radius: 1rem;
+                    color: $main-text-color;
+                }
+                button:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+.launch-animate{
+    animation: launch 3s ease-out forwards;
+}
+@keyframes launch {
+    0%{
+        opacity: 1;
+    }
+    20%{
+        transform: translate(100px);
+        opacity: 1;
+    }
+    50%{
+        transform: translateX(-100px);
+    }
+    80%{
+        transform: translateX(40%);
+    }
+    90%{
+        opacity: 1;
+        transform: translateX(100%);
+    }
+    100%{
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+.main-screen-animate{
+    animation: main 1s ease-out 3s forwards;
+}
+@keyframes main {
+    0%{
+        opacity: 0;
+    }
+    75%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+
+
+.blow-candle{
+    animation: blow .45s ease-out forwards;
+}
+.light-candle{
+    animation: light .45s ease-out forwards;
+}
+@keyframes blow {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes light {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    :root{
+        font-size: 16px;
+    }
+    .buttons{
+        display: flex !important;
+        flex-direction: column !important;
+        div{
+            margin-top: 5% !important;
+            display: flex;
+            justify-content: center;
+            button{
+                padding: .5rem 1.65rem !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,287 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+:root {
+  font-size: 20px;
+}
+
+body .launch-screen {
+  height: 100vh;
+  width: 100vw;
+  background-color: #1a1a1a;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  z-index: 999;
+}
+
+body .launch-screen button {
+  padding: 1.5rem 3.5rem;
+  font-size: 1.3rem;
+  font-family: 'Ubuntu', sans-serif;
+  background-color: #ff3c3c;
+  border: none;
+  border-radius: 1rem;
+}
+
+body .launch-screen button:hover {
+  cursor: pointer;
+}
+
+body .main-screen {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  background-color: #EDEEF7;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 69;
+  opacity: 0;
+}
+
+body .main-screen .wishes {
+  width: 80vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 80vh;
+}
+
+body .main-screen .wishes svg {
+  height: 75%;
+}
+
+body .main-screen .wishes svg .candle {
+  display: block;
+}
+
+body .main-screen .wishes svg .cake {
+  display: block;
+}
+
+body .main-screen .wishes h1 {
+  font-family: 'Ubuntu', sans-serif;
+  color: #412119;
+  font-size: 2.5rem;
+}
+
+body .main-screen .buttons {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  width: 80vw;
+  justify-items: center;
+}
+
+body .main-screen .buttons div button {
+  padding: .75rem 2rem;
+  font-size: .75rem;
+  font-family: 'Ubuntu', sans-serif;
+  background-color: #ef81a0;
+  border: 3px #311913da solid;
+  border-radius: 1rem;
+  color: #412119;
+}
+
+body .main-screen .buttons div button:hover {
+  cursor: pointer;
+}
+
+.launch-animate {
+  -webkit-animation: launch 3s ease-out forwards;
+          animation: launch 3s ease-out forwards;
+}
+
+@-webkit-keyframes launch {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    -webkit-transform: translate(100px);
+            transform: translate(100px);
+    opacity: 1;
+  }
+  50% {
+    -webkit-transform: translateX(-100px);
+            transform: translateX(-100px);
+  }
+  80% {
+    -webkit-transform: translateX(40%);
+            transform: translateX(40%);
+  }
+  90% {
+    opacity: 1;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+}
+
+@keyframes launch {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    -webkit-transform: translate(100px);
+            transform: translate(100px);
+    opacity: 1;
+  }
+  50% {
+    -webkit-transform: translateX(-100px);
+            transform: translateX(-100px);
+  }
+  80% {
+    -webkit-transform: translateX(40%);
+            transform: translateX(40%);
+  }
+  90% {
+    opacity: 1;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+}
+
+.main-screen-animate {
+  -webkit-animation: main 1s ease-out 3s forwards;
+          animation: main 1s ease-out 3s forwards;
+}
+
+@-webkit-keyframes main {
+  0% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes main {
+  0% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.blow-candle {
+  -webkit-animation: blow .45s ease-out forwards;
+          animation: blow .45s ease-out forwards;
+}
+
+.light-candle {
+  -webkit-animation: light .45s ease-out forwards;
+          animation: light .45s ease-out forwards;
+}
+
+@-webkit-keyframes blow {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes blow {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes light {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes light {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  :root {
+    font-size: 16px;
+  }
+  .buttons {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+  }
+  .buttons div {
+    margin-top: 5% !important;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .buttons div button {
+    padding: .5rem 1.65rem !important;
+  }
+}
+/*# sourceMappingURL=style.css.map */
